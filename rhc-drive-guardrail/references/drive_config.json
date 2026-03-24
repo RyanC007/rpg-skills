@@ -1,0 +1,34 @@
+{
+  "_comment": "CLIENT-SPECIFIC GUARDRAIL — RED HORSE CONSTRUCTION ONLY. Do NOT apply this config to any other client.",
+  "client": "Red Horse Construction",
+  "client_id": "red-horse-construction",
+  "drive_type": "shared_drive",
+  "shared_drive_folder_id": "0AMo6XJqwjJ1zUk9PVA",
+  "shared_drive_url": "https://drive.google.com/drive/folders/0AMo6XJqwjJ1zUk9PVA",
+  "rclone_remote": "manus_google_drive",
+  "rclone_flag": "--drive-root-folder-id 0AMo6XJqwjJ1zUk9PVA",
+  "rclone_config": "~/.gdrive-rclone.ini",
+  "working_folder": "RedHorse-Ai",
+  "full_remote_path": "manus_google_drive:RedHorse-Ai",
+  "folders": {
+    "knowledge_base": "RedHorse-Ai/Knowledge_Base",
+    "ai_manager_package": "RedHorse-Ai/AI_Manager_Package",
+    "content_pipeline": "RedHorse-Ai/Content_Pipeline",
+    "content_pipeline_drafts_blog": "RedHorse-Ai/Content_Pipeline/drafts/blog",
+    "content_pipeline_drafts_linkedin": "RedHorse-Ai/Content_Pipeline/drafts/linkedin",
+    "content_pipeline_approved": "RedHorse-Ai/Content_Pipeline/approved_for_publishing",
+    "content_pipeline_published": "RedHorse-Ai/Content_Pipeline/published",
+    "rhc_reports": "RedHorse-Ai/RHC_Reports",
+    "content_plan": "RedHorse-Ai/Content_Plan",
+    "seo_analytics": "RedHorse-Ai/SEO_Analytics"
+  },
+  "guardrail_notes": [
+    "THIS RULE APPLIES TO RED HORSE CONSTRUCTION ONLY — do not copy to other client configs.",
+    "NEVER write to manus_google_drive: root — that is the personal Drive.",
+    "ALWAYS use --drive-root-folder-id 0AMo6XJqwjJ1zUk9PVA with every rclone command for this client.",
+    "ALL inputs (content plans, briefs, approvals) come FROM manus_google_drive:RedHorse-Ai.",
+    "ALL outputs (reports, drafts, published content) go TO manus_google_drive:RedHorse-Ai.",
+    "GitHub (RyanC007/ai-manager-stack) is the backup layer only — shared Drive is the source of truth.",
+    "Other clients use their own Drive configurations — this shared_drive_folder_id is unique to Red Horse."
+  ]
+}

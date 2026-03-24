@@ -1,0 +1,30 @@
+{
+  "_comment": "SCARLETT GUARDRAIL — RPG SHARED DRIVE ONLY.",
+  "client": "Scarlett AI Orchestrator",
+  "client_id": "scarlett-ai",
+  "drive_type": "shared_drive",
+  "shared_drive_folder_id": "0AK8dAs_XgfnNUk9PVA",
+  "shared_drive_url": "https://drive.google.com/drive/folders/0AK8dAs_XgfnNUk9PVA",
+  "rclone_remote": "manus_google_drive",
+  "rclone_flag": "--drive-root-folder-id 0AK8dAs_XgfnNUk9PVA",
+  "rclone_config": "~/.gdrive-rclone.ini",
+  "working_folder": "/",
+  "full_remote_path": "manus_google_drive:",
+  "folders": {
+    "scarlett_root": "Scarlett",
+    "clients": "07_Clients",
+    "context_pool": "Scarlett/Daily_Updates/Context_Pool",
+    "reports": "Scarlett/Reports",
+    "newsletters": "Scarlett/Weekly_Newsletters",
+    "system_files": "Scarlett-System-Files"
+  },
+  "guardrail_notes": [
+    "THIS RULE APPLIES TO SCARLETT ONLY.",
+    "NEVER write to manus_google_drive: root without the drive-root-folder-id flag.",
+    "ALWAYS use --drive-root-folder-id 0AK8dAs_XgfnNUk9PVA with every rclone command.",
+    "ALWAYS use driveId: 0AK8dAs_XgfnNUk9PVA with every gws command.",
+    "ALL inputs (context, knowledge, protocols) come FROM this shared drive.",
+    "ALL outputs (reports, newsletters, client deliverables) go TO this shared drive.",
+    "NEVER permanently delete files. Always move to trash."
+  ]
+}
