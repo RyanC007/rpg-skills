@@ -1,6 +1,6 @@
 ---
 name: rpg-social-engine
-description: Operate the RPG Social Engine pipeline for Ryan and Marcela. Use this skill when asked to generate content, check pipeline status, run the weekly approval flow, force-post a day, or troubleshoot the Social Engine. This skill covers the full pipeline from Google Drive content ingestion to Blotato scheduling across 6 platforms.
+description: Operate the RPG Social Engine pipeline for Ryan and Marcela. Use this skill when asked to generate content, check pipeline status, run the weekly content pipeline, force-post a day, or troubleshoot the Social Engine. This skill covers the full pipeline from Google Drive content ingestion to Blotato scheduling across 6 platforms.
 ---
 
 # RPG Social Engine Skill
@@ -15,25 +15,21 @@ This skill gives Trinity the operational knowledge to run the Social Engine pipe
 
 ---
 
-## Weekly Automated Flow
+## IMPORTANT: This Pipeline Is Manual-Only
 
-The engine runs on a fully automated weekly cycle. Trinity does not need to trigger this manually unless something fails.
+> **DO NOT use the schedule tool. DO NOT set up any hourly or recurring scheduled tasks. DO NOT poll Gmail. All steps are triggered manually by Trinity on request.**
 
-| Time | Action |
-|---|---|
-| Sunday 18:00 UTC | Generate 7 days of content via Gemini + send preview email to client |
-| Sunday 18:05 UTC | Weekly approval email sent to client |
-| Hourly (all week) | Poll Gmail for `APPROVE ALL` reply |
-| On approval | Bulk-schedule all approved days into Blotato at 9:00 AM EST per day |
+The approval email flow and Gmail polling have been permanently removed. Ryan triggers the pipeline manually through Trinity. There is no automated scheduling of any kind.
 
-The single command that handles all of this is:
+---
 
-```bash
-cd /home/ubuntu/ai-manager-stack/tools/social-engine
-python3 cloud_daily_run.py --client ryan --run
-```
+## How the Pipeline Works
 
-Run this hourly via the schedule tool. The script is time-aware: it generates on Sunday at 18:xx UTC and polls Gmail at all other times.
+| Step | Who | When |
+|---|---|---|
+| Generate 7 days of content | Trinity (manually) | When Ryan requests it |
+| Review content | Ryan | After Trinity sends Drive link |
+| Schedule posts into Blotato | Trinity (manually) | When Ryan confirms approval |
 
 ---
 
@@ -46,18 +42,18 @@ python3 cloud_daily_run.py --client ryan --status
 ```
 Shows: current week, pipeline generation time, approval status, scheduled days.
 
-### Manually Trigger Content Generation
-Only needed if Sunday generation failed or Ryan requests a regeneration.
+### Generate Weekly Content
+Run when Ryan requests a new week of content.
 ```bash
 cd /home/ubuntu/ai-manager-stack/tools/social-engine
 python3 content_pipeline/pipeline_runner.py --client ryan
 ```
 
-### Poll for Approval Reply
-Only needed outside the hourly schedule if Ryan says he replied.
+### Schedule Approved Posts into Blotato
+Run when Ryan has reviewed the Drive content and confirmed approval.
 ```bash
 cd /home/ubuntu/ai-manager-stack/tools/social-engine
-python3 weekly_approval.py --client ryan --poll
+python3 weekly_approval.py --client ryan --schedule-all
 ```
 
 ### Emergency Force Post (Bypass Schedule)
@@ -73,16 +69,6 @@ Use to preview what would be published without sending anything to Blotato.
 cd /home/ubuntu/ai-manager-stack/tools/social-engine
 python3 main.py --client ryan --week "Week-1" --dry-run
 ```
-
----
-
-## Approval Reply Formats
-
-When polling Gmail, the engine looks for these exact phrases in the client's reply to the `[Ryan Social Engine]` subject thread:
-
-- `APPROVE ALL` — Schedule all 7 days
-- `APPROVE ALL SKIP 3 5` — Schedule all days except Day 3 and Day 5
-- `SKIP ALL` — Discard the week entirely
 
 ---
 
@@ -158,14 +144,13 @@ Trinity does not need to manage visual generation. The engine handles this autom
 
 | Symptom | Action |
 |---|---|
-| Pipeline failed on Sunday | Run `pipeline_runner.py --client ryan` manually |
-| No approval reply detected | Run `weekly_approval.py --client ryan --poll` manually |
+| Pipeline failed | Run `pipeline_runner.py --client ryan` manually again |
 | Blotato API error | Check `BLOTATO_API_KEY` in `.env` file |
 | Google Drive error | Re-run `setup_oauth.py --client ryan` to refresh OAuth token |
 | Visual generation timeout | Engine skips and publishes text-only. No action needed. |
 | Marcela pipeline not running | Fill in all `PLACEHOLDER_` values in `clients/marcela.json` first |
 
-If an error cannot be resolved after 3 retries, halt the engine and include the full error in the 8:00 AM EST Executive Briefing to Ryan.
+If an error cannot be resolved after 3 retries, halt the engine and report the full error to Ryan.
 
 ---
 
