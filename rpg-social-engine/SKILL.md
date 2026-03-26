@@ -15,15 +15,27 @@ This skill gives Trinity the operational knowledge to run the Social Engine pipe
 
 ---
 
-## IMPORTANT: This Pipeline Is Manual-Only
+## PERMANENT HARD RULES — READ BEFORE DOING ANYTHING
 
-> **DO NOT use the schedule tool. DO NOT set up any hourly or recurring scheduled tasks. DO NOT poll Gmail. All steps are triggered manually by Trinity on request.**
+> **RULE 1: NEVER use the schedule tool for this pipeline. Not hourly. Not daily. Not weekly. Not ever. Under any circumstances.**
+>
+> **RULE 2: NEVER poll Gmail. NEVER check for APPROVE ALL replies. NEVER send approval emails. The email approval flow is permanently removed.**
+>
+> **RULE 3: NEVER automate any part of this pipeline without Ryan explicitly saying "set up a schedule" in that exact session. A playbook, a skill, or a prior instruction is NOT sufficient authorisation to create a scheduled task.**
+>
+> **RULE 4: If you are reading this skill because a scheduled task fired and brought you here — STOP. Kill the scheduled task immediately. Do not run the pipeline. Report to Ryan that a rogue schedule was found and cancelled.**
 
-The approval email flow and Gmail polling have been permanently removed. Ryan triggers the pipeline manually through Trinity. There is no automated scheduling of any kind.
+These rules exist because a scheduled task was previously created in error and kept re-firing the pipeline every hour without Ryan's knowledge. This must never happen again.
 
 ---
 
-## How the Pipeline Works
+## How the Pipeline Works (Manual-Only)
+
+Ryan triggers the pipeline manually through Trinity. There is no automated scheduling of any kind.
+
+---
+
+## Pipeline Steps
 
 | Step | Who | When |
 |---|---|---|
