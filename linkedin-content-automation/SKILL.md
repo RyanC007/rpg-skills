@@ -1,6 +1,6 @@
 ---
 name: linkedin-content-automation
-description: Automate LinkedIn content creation by analyzing Ryan's profile and generating daily draft posts. Use when the user requests LinkedIn content automation, daily post generation, or scheduling LinkedIn content check-ins. This skill scrapes LinkedIn profiles, learns writing style, generates posts using a knowledge base, tracks posting cadence, and delivers daily drafts at 8 AM EST.
+description: Automate LinkedIn content creation by analyzing Ryan's profile and generating draft posts on-demand. Use when Ryan or Marcela requests LinkedIn content automation or post generation. This skill scrapes LinkedIn profiles, learns writing style, generates posts using a knowledge base, and tracks posting cadence. UPDATED April 2, 2026: No longer runs on a daily 8 AM schedule. On-demand only.
 license: MIT
 ---
 
@@ -16,7 +16,7 @@ This skill provides a complete workflow for LinkedIn content automation:
 2. Load knowledge base from project's `/knowledge/` directory
 3. Generate daily LinkedIn post drafts
 4. Track posting cadence (minimum 3 posts per week)
-5. Deliver daily check-ins at 8:00 AM EST with draft posts
+5. Deliver draft posts on-demand when requested by Ryan or Marcela
 
 ## Configuration
 
@@ -24,7 +24,7 @@ This skill provides a complete workflow for LinkedIn content automation:
 
 **Knowledge Base Location**: `./knowledge/` (relative to project root)
 
-**Posting Schedule**: Daily check-in at 8:00 AM EST
+**Posting Schedule**: ON-DEMAND ONLY (updated April 2, 2026; was daily 8:00 AM EST)
 
 **Minimum Cadence**: 3 posts per week
 
@@ -76,21 +76,27 @@ mkdir -p ./linkedin_data
 echo '{"posts": []}' > ./linkedin_data/post_history.json
 ```
 
-**Step 4: Schedule Daily Check-in**
+**Step 4: ~~Schedule Daily Check-in~~ (REMOVED)**
 
-Use the schedule tool to set up daily 8:00 AM EST check-ins:
+> **UPDATED: April 2, 2026 — Per Ryan's directive**
+> The daily 8:00 AM EST cron schedule has been removed.
+> This skill is now **ON-DEMAND ONLY**, triggered when Ryan or Marcela requests it.
+> Do NOT set up a cron or scheduled task for this skill.
+
+~~Use the schedule tool to set up daily 8:00 AM EST check-ins:~~
 
 ```
-Type: cron
-Cron: 0 0 8 * * *
-Timezone: America/New_York (EST)
-Repeat: true
-Prompt: "Generate today's LinkedIn post draft using the linkedin-content-automation skill"
+# REMOVED (April 2, 2026) — was:
+# Type: cron
+# Cron: 0 0 8 * * *
+# Timezone: America/New_York (EST)
+# Repeat: true
+# Prompt: "Generate today's LinkedIn post draft using the linkedin-content-automation skill"
 ```
 
 ### Daily Workflow (Automated)
 
-When triggered at 8:00 AM EST or manually invoked:
+When manually invoked by Ryan or Marcela (no longer triggered by schedule):
 
 **Step 1: Check Posting Cadence**
 
@@ -259,7 +265,7 @@ linkedin-content-automation/
 
 - The skill uses OpenAI's API (gpt-4.1-mini) for post generation
 - Browser automation is required for LinkedIn profile scraping
-- Schedule tool is required for daily 8 AM EST check-ins
+- Schedule tool is NO LONGER used (on-demand only as of April 2, 2026)
 - Knowledge base should be maintained and updated by the user
 - Post drafts are suggestions; user has final editorial control
 
