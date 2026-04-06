@@ -101,7 +101,7 @@ A comprehensive **Investor-Ready Report** in Markdown format, structured as:
 ### Standard RPG Sanitization (All Agents)
 
 ```bash
-python3 /home/ubuntu/knowledge_bases/rpg-branded-agents/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md
+python3 /home/ubuntu/knowledge_bases/rpg-skills/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md
 ```
 
 The tool overwrites the file in place. Use `--output /path/to/clean_file.md` to save a separate sanitized copy instead.
@@ -109,7 +109,7 @@ The tool overwrites the file in place. Use `--output /path/to/clean_file.md` to 
 ### Logoclothz Agents (Additional Rules)
 
 ```bash
-python3 /home/ubuntu/knowledge_bases/rpg-branded-agents/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md --logoclothz
+python3 /home/ubuntu/knowledge_bases/rpg-skills/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md --logoclothz
 ```
 
 ### Sanitization Checklist

@@ -85,6 +85,6 @@ Notify Ryan or Marcela that drafts are ready for review.
 ## Mandatory Final Step: Content Sanitization
 Before saving any generated content drafts to a file or publishing them, you MUST run the universal content sanitizer CLI tool on the output file to ensure all RPG slop words are removed.
 ```bash
-python3 /home/ubuntu/knowledge_bases/rpg-branded-agents/skills/_guardrails/sanitize_output.py --input /path/to/your/output.md
+python3 /home/ubuntu/knowledge_bases/rpg-skills/skills/_guardrails/sanitize_output.py --input /path/to/your/output.md
 ```
 Do not skip this step.

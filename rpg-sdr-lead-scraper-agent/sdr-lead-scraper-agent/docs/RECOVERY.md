@@ -8,7 +8,7 @@ If the agent directory is deleted or corrupted:
 
 ```bash
 cd /home/ubuntu/knowledge_bases
-git clone https://github.com/RyanC007/rpg-branded-agents.git
+git clone https://github.com/RyanC007/rpg-skills.git
 ```
 
 ## Verify Google Drive

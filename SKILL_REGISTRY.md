@@ -80,4 +80,4 @@ This registry contains all 72 unique skills across the Ready, Plan, Grow! ecosys
 | `skill-creator` | Guide for creating or updating skills that extend Manus via specialized knowledge, workflows, or tool integrations. For any modification or improvement request, MUST first read this skill and follow its update workflow instead of editing files directly. |
 
 ## Centralization Notes
-This repository is the single source of truth for all RPG skills. Skills previously scattered across `rpg-branded-agents`, `ai-manager-stack`, and `geo-seo-manus` have been consolidated here.
+This repository is the single source of truth for all RPG skills. Skills previously scattered across `rpg-skills`, `ai-manager-stack`, and `geo-seo-manus` have been consolidated here.

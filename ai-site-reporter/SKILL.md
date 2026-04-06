@@ -77,7 +77,7 @@ Utilize the bundled Python script `analyze_site.py` to extract key signals from 
 -   Open Graph and Twitter card tags.
 
 ```bash
-python3.11 /home/ubuntu/rpg-branded-agents/skills/ai-site-reporter/scripts/analyze_site.py /tmp/site_homepage.html
+python3.11 /home/ubuntu/rpg-skills/skills/ai-site-reporter/scripts/analyze_site.py /tmp/site_homepage.html
 ```
 
 ### Step 3: Identify the Builder / CMS
@@ -93,7 +93,7 @@ Cross-reference the extracted fingerprints with the lookup table in `references/
 7.  Deployment ID patterns (e.g., `dpl_` for Vercel).
 
 ```bash
-cat /home/ubuntu/rpg-branded-agents/skills/ai-site-reporter/references/builder_fingerprints.md
+cat /home/ubuntu/rpg-skills/skills/ai-site-reporter/references/builder_fingerprints.md
 ```
 
 ### Step 4: Determine Site Age

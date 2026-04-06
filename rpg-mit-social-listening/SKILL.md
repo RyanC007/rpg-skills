@@ -34,7 +34,7 @@ This skill monitors and analyzes brand mentions, sentiment, and conversations ac
 The agent delivers a comprehensive social listening report, typically in Markdown or PDF format. This report includes: a summary of brand mentions, sentiment analysis results (overall and by topic), identification of key themes and conversations, a list of influential users, and detected trends. The report will provide actionable insights based on the analysis.
 
 ## Source Material
-*   `/home/ubuntu/rpg-branded-agents/knowledge_bases/rpg-marketing-frameworks/research-intelligence/06-social-listening-intelligence-framework.md`
+*   `/home/ubuntu/rpg-skills/knowledge_bases/rpg-marketing-frameworks/research-intelligence/06-social-listening-intelligence-framework.md`
 *   `truth-engine-manus/agents/twitter_agent.py`
 
 ## Guardrails
@@ -48,7 +48,7 @@ The agent delivers a comprehensive social listening report, typically in Markdow
 ### Standard RPG Sanitization (All Agents)
 
 ```bash
-python3 /home/ubuntu/knowledge_bases/rpg-branded-agents/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md
+python3 /home/ubuntu/knowledge_bases/rpg-skills/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md
 ```
 
 The tool overwrites the file in place. Use `--output /path/to/clean_file.md` to save a separate sanitized copy instead.
@@ -56,7 +56,7 @@ The tool overwrites the file in place. Use `--output /path/to/clean_file.md` to 
 ### Logoclothz Agents (Additional Rules)
 
 ```bash
-python3 /home/ubuntu/knowledge_bases/rpg-branded-agents/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md --logoclothz
+python3 /home/ubuntu/knowledge_bases/rpg-skills/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md --logoclothz
 ```
 
 ### Sanitization Checklist

@@ -225,7 +225,7 @@ rclone ls "manus_google_drive:ALL ORDERS/<PO_NUMBER>" \
 
 ## Version Control
 
-When guardrails are updated, commit to `rpg-branded-agents` repo and drop a skill update notification in the Google Drive context pool so all agent instances can pull the update.
+When guardrails are updated, commit to `rpg-skills` repo and drop a skill update notification in the Google Drive context pool so all agent instances can pull the update.
 
 
 ---

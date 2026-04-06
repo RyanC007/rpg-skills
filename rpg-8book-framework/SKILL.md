@@ -107,7 +107,7 @@ A structured analysis report containing:
 **BEFORE delivering any file, report, post, or content to the user or saving to Google Drive, you MUST run the sanitization tool on the output file.** This is non-negotiable and applies to every agent and every output type.
 
 ```bash
-python3 /home/ubuntu/knowledge_bases/rpg-branded-agents/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md
+python3 /home/ubuntu/knowledge_bases/rpg-skills/skills/_guardrails/sanitize_output.py --input /path/to/output_file.md
 ```
 
 The tool overwrites the file in place. Use `--output /path/to/clean_file.md` to save a separate sanitized copy instead.
