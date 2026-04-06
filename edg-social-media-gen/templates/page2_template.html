@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PLAN_NAME}} - Slide 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1080px; height: 1350px; margin: 0; padding: 0; background: #0a0a0a; }
+    body { font-family: 'Montserrat', sans-serif; }
+    .instagram-post { width: 100%; height: 100%; position: relative; overflow: hidden; }
+    .instagram-post::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.03; pointer-events: none; z-index: 10; }
+    .accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: #89bc19; z-index: 5; }
+    .header { position: absolute; top: 80px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: flex-start; z-index: 3; }
+    .brand { display: flex; flex-direction: column; gap: 8px; }
+    .brand-tag { font-size: 11px; letter-spacing: 4px; color: #89bc19; font-weight: 500; text-transform: uppercase; }
+    .plan-number { font-family: 'Noto Serif', serif; font-size: 14px; color: rgba(255,255,255,0.4); letter-spacing: 2px; }
+    .style-badge { background: rgba(137,188,25,0.1); border: 1px solid rgba(137,188,25,0.3); padding: 12px 20px; font-size: 10px; letter-spacing: 3px; color: #89bc19; text-transform: uppercase; }
+    .title-section { position: absolute; top: 200px; left: 80px; right: 80px; z-index: 3; }
+    .main-title { font-family: 'Noto Serif', serif; font-size: 88px; font-weight: 600; color: #fff; line-height: 0.95; letter-spacing: -2px; }
+    .main-title span { display: block; color: #89bc19; font-style: italic; font-weight: 400; font-size: 84px; }
+    .subtitle { margin-top: 30px; font-size: 13px; letter-spacing: 6px; color: rgba(255,255,255,0.5); text-transform: uppercase; font-weight: 300; }
+    .stats-container { position: absolute; top: 500px; left: 80px; right: 80px; display: flex; gap: 0; z-index: 3; }
+    .stat { flex: 1; padding: 40px 0; border-right: 1px solid rgba(137,188,25,0.2); text-align: center; }
+    .stat:last-child { border-right: none; }
+    .stat-value { font-family: 'Noto Serif', serif; font-size: 56px; font-weight: 600; color: #fff; line-height: 1; }
+    .stat-value .unit { font-size: 24px; color: rgba(255,255,255,0.4); font-weight: 400; }
+    .stat-label { margin-top: 14px; font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 400; }
+    .features-section { position: absolute; top: 720px; left: 80px; right: 80px; z-index: 3; }
+    .features-title { font-size: 10px; letter-spacing: 4px; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid rgba(137,188,25,0.2); }
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px 60px; }
+    .feature-item { display: flex; align-items: center; gap: 20px; }
+    .feature-icon { width: 50px; height: 50px; border: 1px solid rgba(196,169,122,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .feature-icon svg { width: 24px; height: 24px; stroke: #C4A97A; fill: none; stroke-width: 1.5; }
+    .feature-text { display: flex; flex-direction: column; gap: 4px; }
+    .feature-label { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+    .feature-value { font-family: 'Noto Serif', serif; font-size: 20px; color: #fff; font-weight: 500; }
+    .bottom-bar { position: absolute; bottom: 80px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: flex-end; z-index: 3; padding-top: 40px; border-top: 1px solid rgba(137,188,25,0.2); }
+    .dimensions { display: flex; flex-direction: column; gap: 8px; }
+    .dim-label { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+    .dim-value { font-family: 'Noto Serif', serif; font-size: 32px; color: #fff; font-weight: 500; }
+    .price-tag { text-align: right; }
+    .price-label { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 8px; }
+    .price-value { font-family: 'Noto Serif', serif; font-size: 40px; color: #89bc19; font-weight: 600; }
+    .corner { position: absolute; width: 50px; height: 50px; z-index: 4; }
+    .corner::before, .corner::after { content: ''; position: absolute; background: #89bc19; }
+    .corner-tl { top: 60px; left: 60px; }
+    .corner-tl::before { top: 0; left: 0; width: 2px; height: 30px; }
+    .corner-tl::after { top: 0; left: 0; width: 30px; height: 2px; }
+    .corner-tr { top: 60px; right: 60px; }
+    .corner-tr::before { top: 0; right: 0; width: 2px; height: 30px; }
+    .corner-tr::after { top: 0; right: 0; width: 30px; height: 2px; }
+    .corner-bl { bottom: 60px; left: 60px; }
+    .corner-bl::before { bottom: 0; left: 0; width: 2px; height: 30px; }
+    .corner-bl::after { bottom: 0; left: 0; width: 30px; height: 2px; }
+    .corner-br { bottom: 60px; right: 60px; }
+    .corner-br::before { bottom: 0; right: 0; width: 2px; height: 30px; }
+    .corner-br::after { bottom: 0; right: 0; width: 30px; height: 2px; }
+  </style>
+</head>
+<body>
+  <div class="instagram-post">
+    <div class="accent-bar"></div>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+    <div class="header">
+      <div class="brand">
+        <div class="brand-tag">Elite Design Group</div>
+        <div class="plan-number">Plan No. {{PLAN_NUMBER}}</div>
+      </div>
+      <div class="style-badge">{{PLAN_NAME}}</div>
+    </div>
+    <div class="title-section">
+      <h1 class="main-title">{{STYLE_MAIN}} <span>{{STYLE_ACCENT}}</span></h1>
+      <div class="subtitle">Luxury Residential Architecture</div>
+    </div>
+    <div class="stats-container">
+      <div class="stat">
+        <div class="stat-value">{{SQ_FT}}<span class="unit"> ft²</span></div>
+        <div class="stat-label">Square Feet</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">{{BEDS}}</div>
+        <div class="stat-label">Bedrooms</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">{{BATHS}}</div>
+        <div class="stat-label">Bathrooms</div>
+      </div>
+    </div>
+    <div class="features-section">
+      <div class="features-title">Key Plan Details</div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+          <div class="feature-text"><div class="feature-label">Primary Suite</div><div class="feature-value">{{PRIMARY_SUITE}}</div></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path></svg></div>
+          <div class="feature-text"><div class="feature-label">Specialty</div><div class="feature-value">{{SPECIALTY}}</div></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></div>
+          <div class="feature-text"><div class="feature-label">Garages</div><div class="feature-value">{{GARAGE_DETAILS}}</div></div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div>
+          <div class="feature-text"><div class="feature-label">Floors</div><div class="feature-value">{{FLOORS}}</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <div class="dimensions"><div class="dim-label">Footprint</div><div class="dim-value">{{FOOTPRINT}}</div></div>
+      <div class="price-tag"><div class="price-label">Starting From</div><div class="price-value">{{PRICE}}</div></div>
+    </div>
+  </div>
+</body>
+</html>

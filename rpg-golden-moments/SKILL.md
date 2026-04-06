@@ -1,6 +1,6 @@
 ---
 name: rpg-golden-moments
-description: Captures, synthesizes, and converts daily wins, breakthroughs, and insights into content for LinkedIn, Substack, and X. Use when logging a golden moment, running the daily synthesis, or generating content from captured moments. Assigned to Scarlett, Trinity, and Ryan AI. Already scheduled - do not modify the schedule without Ryan approval.
+description: Captures, synthesizes, and converts daily wins, breakthroughs, and insights into content for LinkedIn, Substack, and X. Use when logging a golden moment, running the daily synthesis, or generating content from captured moments. Assigned to Scarlett, Trinity, Thor, and Ryan AI. Already scheduled - do not modify the schedule without Ryan approval.
 ---
 
 # RPG Golden Moments Skill
@@ -20,7 +20,7 @@ Capture daily wins, breakthroughs, and insights before they get lost. Synthesize
 ## Agent Assignment
 - Scarlett: Yes
 - Trinity: Yes
-- Thor: No (decommissioned)
+- Thor: Yes
 - Ryan AI: Yes
 - Morpheus: No
 
@@ -81,3 +81,10 @@ Notify Ryan or Marcela that drafts are ready for review.
 - No corporate jargon
 - No em dashes
 - The story is the work, not the tool
+
+## Mandatory Final Step: Content Sanitization
+Before saving any generated content drafts to a file or publishing them, you MUST run the universal content sanitizer CLI tool on the output file to ensure all RPG slop words are removed.
+```bash
+python3 /home/ubuntu/knowledge_bases/rpg-branded-agents/skills/_guardrails/sanitize_output.py --input /path/to/your/output.md
+```
+Do not skip this step.

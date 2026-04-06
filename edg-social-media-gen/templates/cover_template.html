@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PLAN_NAME}} - Cover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1080px; height: 1350px; margin: 0; padding: 0; background: #0a0a0a; }
+    body { font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
+    .instagram-post { width: 100%; height: 100%; position: relative; overflow: hidden; }
+    .hero-image { position: absolute; top: 80px; left: 80px; right: 80px; height: 720px; background: url('{{IMAGE_URL}}') center center / cover no-repeat; z-index: 1; }
+    .hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(10,10,10,0.4) 100%); pointer-events: none; }
+    .accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: #89bc19; z-index: 10; }
+    .content-section { position: absolute; bottom: 0; left: 0; right: 0; top: 800px; background: #0a0a0a; padding: 60px 80px 80px; z-index: 3; }
+    .title-area { margin-bottom: 50px; }
+    .plan-number { font-size: 18px; letter-spacing: 4px; color: #ffffff; text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
+    .main-title { font-family: 'Noto Serif', serif; font-size: 72px; font-weight: 600; color: #fff; line-height: 1; letter-spacing: -1px; }
+    .main-title span { color: #89bc19; font-style: italic; font-weight: 400; }
+    .stats-row { display: flex; gap: 0; border-top: 1px solid rgba(137,188,25,0.3); border-bottom: 1px solid rgba(137,188,25,0.3); }
+    .stat { flex: 1; padding: 32px 0; text-align: center; border-right: 1px solid rgba(137,188,25,0.2); }
+    .stat:last-child { border-right: none; }
+    .stat-value { font-family: 'Noto Serif', serif; font-size: 42px; font-weight: 600; color: #fff; line-height: 1; }
+    .stat-value .unit { font-size: 18px; color: #ffffff; font-weight: 400; }
+    .stat-label { margin-top: 10px; font-size: 14px; letter-spacing: 3px; color: #89bc19; text-transform: uppercase; font-weight: 600; }
+    .bottom-bar { display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 40px; gap: 12px; }
+    .website-url { font-size: 14px; letter-spacing: 3px; color: #89bc19; text-transform: uppercase; font-weight: 600; }
+    .cta-text { font-size: 16px; letter-spacing: 3px; color: #ffffff; text-transform: uppercase; font-weight: 500; text-align: center; line-height: 1.4; }
+    .corner { position: absolute; width: 50px; height: 50px; z-index: 6; }
+    .corner::before, .corner::after { content: ''; position: absolute; background: #89bc19; }
+    .corner-tl { top: 60px; left: 60px; }
+    .corner-tl::before { top: 0; left: 0; width: 2px; height: 30px; }
+    .corner-tl::after { top: 0; left: 0; width: 30px; height: 2px; }
+    .corner-tr { top: 60px; right: 60px; }
+    .corner-tr::before { top: 0; right: 0; width: 2px; height: 30px; }
+    .corner-tr::after { top: 0; right: 0; width: 30px; height: 2px; }
+    .corner-bl { bottom: 60px; left: 60px; }
+    .corner-bl::before { bottom: 0; left: 0; width: 2px; height: 30px; }
+    .corner-bl::after { bottom: 0; left: 0; width: 30px; height: 2px; }
+    .corner-br { bottom: 60px; right: 60px; }
+    .corner-br::before { bottom: 0; right: 0; width: 2px; height: 30px; }
+    .corner-br::after { bottom: 0; right: 0; width: 30px; height: 2px; }
+  </style>
+</head>
+<body>
+  <div class="instagram-post">
+    <div class="accent-bar"></div>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+    <div class="hero-image"></div>
+    <div class="content-section">
+      <div class="title-area">
+        <div class="plan-number">Plan No. {{PLAN_NUMBER}} | {{PLAN_NAME}}</div>
+        <h1 class="main-title">{{STYLE_MAIN}} <span>{{STYLE_ACCENT}}</span></h1>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-value">{{SQFT}}<span class="unit"> ft²</span></div>
+          <div class="stat-label">Square Feet</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">{{BEDS}}</div>
+          <div class="stat-label">Bedrooms</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">{{BATHS}}</div>
+          <div class="stat-label">Bathrooms</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">{{GARAGES}}</div>
+          <div class="stat-label">Garages</div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <div class="website-url">EliteDesignGroup.com</div>
+        <div class="cta-text">Visit Our Website For Floor Plans</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
