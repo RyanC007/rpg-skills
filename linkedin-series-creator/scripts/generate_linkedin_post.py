@@ -1,8 +1,25 @@
 #!/usr/bin/env python3
 """
-LinkedIn Post Generator
-Generates LinkedIn post drafts using AI based on Ryan's writing style and knowledge base.
+*** DEPRECATED -- DO NOT USE ***
+
+This script is superseded by the canonical content generation engine:
+  ai-manager-stack/tools/social-engine/content_pipeline/pipeline_runner.py
+
+All content generation for Ryan's personal pipeline now runs through
+pipeline_runner.py, which handles multi-platform output, Blotato scheduling,
+and Drive delivery. This file is retained for reference only.
+
+Deprecated: 2026-04-08
+Replacement: ai-manager-stack/tools/social-engine/content_pipeline/pipeline_runner.py
 """
+
+import warnings
+warnings.warn(
+    "generate_linkedin_post.py is DEPRECATED. "
+    "Use ai-manager-stack/tools/social-engine/content_pipeline/pipeline_runner.py instead.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 import sys
 import json
