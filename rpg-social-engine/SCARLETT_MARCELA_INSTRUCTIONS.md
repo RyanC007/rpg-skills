@@ -110,27 +110,34 @@ Tariffs, interest rates, supply chain shifts, policy changes, economic signals. 
 
 ## Image Template Rotation
 
-One image is generated per post. Rotate through the following 5 templates in order, cycling back to Template 1 after Template 5.
+One image is generated per post. These are the five Blotato-style templates used in Marcela's W1/W2 pipeline, now replicated by Scarlett using AI image generation. Rotate through all five in order, resetting each week.
 
-| Template | Style | Best For |
-| :--- | :--- | :--- |
-| **T1: Bold Quote Card** | White background, large bold text (Poppins Bold), single RPG accent color (yellow #F5C518 or orange #FF6B35), Marcela's name bottom right, RPG logo bottom left | Monday and Thursday posts |
-| **T2: Stat or Number Callout** | Dark background (#1a1a1a), large number or stat in yellow, supporting text in white, clean minimal layout | Wednesday (Know Your Numbers) posts |
-| **T3: Tip List Card** | Light yellow or orange tint background, numbered list (3 items max), Poppins font, RPG logo, Marcela's name | Tuesday (Marketing Ops) posts |
-| **T4: Question Hook Card** | White background, large question text in dark gray, small subtext, accent color underline, conversational feel | Friday (News/Reality) posts |
-| **T5: Personal Story Card** | Warm off-white background, Caveat Brush font for the headline phrase, Poppins for supporting text, soft and human feel | Thursday (Leadership/Mindset) posts |
+Reference images for each template are stored at:
+`/home/ubuntu/repos/ai-manager-stack/assets/linkedin-images/marcela-w1-w2/`
 
-**Rotation order by week:**
-- Post 1 (Monday): T1
-- Post 2 (Tuesday): T2
-- Post 3 (Wednesday): T3
-- Post 4 (Thursday): T4
-- Post 5 (Friday): T5
-- Next week Post 1 (Monday): T1 again (full reset each week)
+| Template | File Reference | Visual Style | Day |
+| :--- | :--- | :--- | :--- |
+| **T1: Whiteboard** | `post-01-whiteboard.png` | Modern office, aluminum-framed whiteboard on wheels, marker-written headline in large bold font, flow diagram or steps drawn below in marker. Bright, clean, professional. | Monday |
+| **T2: Newspaper** | `post-02-newspaper.png` | Black and white photo of a folded newspaper on a wooden desk with glasses and coffee cup. Large bold serif headline at top, subheadline below, bullet list in a boxed column. Authoritative and credible. | Tuesday |
+| **T3: Chalkboard** | `post-03-chalkboard.png` | Wooden-framed green classroom chalkboard, warm natural light from window, student desks visible. White chalk handwriting. Headline at top, two-column comparison table drawn in chalk below. Educational and approachable. | Wednesday |
+| **T4: Open Book** | `post-04-openbook.png` | Open book lying flat on a worn wooden table, coffee and glasses nearby. Typewriter/serif font on cream pages. Left page = quote or hook. Right page = numbered list of 5 items. Thoughtful and instructional. | Thursday |
+| **T5: Billboard** | `post-05-billboard.png` | Large highway billboard at dusk or golden hour, traffic below, industrial skyline. All-caps bold white sans-serif headline, very large. Small italic subtext line below. Bold, defiant, cinematic. | Friday |
 
-**Image specs:** 1200 x 1200 px (square, LinkedIn optimal). All text must be legible at thumbnail size.
+**Rotation order:**
 
-**Image generation method:** Scarlett generates images using the AI image generation tool (Manus generate mode). Blotato is banned. Images are saved locally and attached to the Google Doc.
+| Week Day | Template |
+| :--- | :--- |
+| Monday | T1 Whiteboard |
+| Tuesday | T2 Newspaper |
+| Wednesday | T3 Chalkboard |
+| Thursday | T4 Open Book |
+| Friday | T5 Billboard |
+
+The rotation resets every Monday. Every week follows the same Mon-Fri template order.
+
+**Image specs:** 16:9 landscape (LinkedIn optimal, matches the reference images). All text must be legible at thumbnail size.
+
+**Image generation method:** Scarlett generates images using the AI image generation tool with the corresponding W1/W2 reference image loaded as a visual reference. Blotato is banned. Images are saved locally and attached to the Google Doc.
 
 ---
 
