@@ -1,0 +1,182 @@
+{
+  "client": {
+    "name": "CLIENT NAME",
+    "slug": "client-slug",
+    "password": "clientslug2026",
+    "tagline": "Short client tagline or mission statement",
+    "website": "https://www.clientwebsite.com",
+    "driveUrl": "https://drive.google.com/drive/folders/[ROOT_FOLDER_ID]",
+    "uploadsFolder": "https://drive.google.com/drive/folders/[UPLOADS_FOLDER_ID]",
+    "authorizedEmails": [
+      "contact@clientdomain.com"
+    ],
+    "startDate": "Month YYYY",
+    "projectType": "new_build"
+  },
+  "scarlettIntelligence": {
+    "summary": "Brief summary of what Scarlett found during the initial crawl and document review.",
+    "autoPopulated": [
+      "Website platform identified",
+      "Brand guide analyzed",
+      "Proposal reviewed"
+    ],
+    "pendingKickoff": [
+      "Hosting credentials",
+      "Analytics access",
+      "Shared inbox setup"
+    ]
+  },
+  "progress": {
+    "phase1": 0,
+    "phase2": 0,
+    "phase3": 0,
+    "phase4": 0
+  },
+  "phase1": {
+    "title": "Phase 1 · Required Foundation",
+    "description": "We can't work together without these basics in place.",
+    "status": "active",
+    "items": [
+      {
+        "id": "p1-1",
+        "label": "Kickoff Call Complete",
+        "status": "pending",
+        "owner": "client",
+        "detail": "Schedule via hello@readyplangrow.com"
+      },
+      {
+        "id": "p1-2",
+        "label": "Website / Hosting Access",
+        "status": "pending",
+        "owner": "client",
+        "detail": "Share credentials with Marcela via text to (973) 953-5439"
+      },
+      {
+        "id": "p1-3",
+        "label": "Google Analytics 4",
+        "status": "pending",
+        "owner": "client",
+        "detail": "Add hello@readyplangrow.com as Editor"
+      },
+      {
+        "id": "p1-4",
+        "label": "Google Search Console",
+        "status": "pending",
+        "owner": "client",
+        "detail": "Add hello@readyplangrow.com as Owner"
+      },
+      {
+        "id": "p1-5",
+        "label": "Shared Inbox Setup",
+        "status": "pending",
+        "owner": "client",
+        "detail": "Set up a shared email (e.g., marketing@ or hello@) and text credentials to Marcela at (973) 953-5439"
+      },
+      {
+        "id": "p1-6",
+        "label": "Drive Folder Shared",
+        "status": "done",
+        "owner": "rpg",
+        "detail": "Your shared Google Drive folder is ready"
+      }
+    ]
+  },
+  "phase2": {
+    "title": "Phase 2 · Business Backpack",
+    "description": "Your strategic foundation. Everything we build comes from this.",
+    "status": "locked",
+    "items": [
+      {
+        "id": "p2-1",
+        "label": "Marketing Ops Audit",
+        "status": "pending",
+        "owner": "rpg"
+      },
+      {
+        "id": "p2-2",
+        "label": "Business Strategy Review",
+        "status": "pending",
+        "owner": "rpg"
+      },
+      {
+        "id": "p2-3",
+        "label": "ICPs — Ideal Customer Profiles",
+        "status": "pending",
+        "owner": "rpg"
+      },
+      {
+        "id": "p2-4",
+        "label": "Customer Journey Map",
+        "status": "pending",
+        "owner": "rpg"
+      },
+      {
+        "id": "p2-5",
+        "label": "Competitive Analysis",
+        "status": "pending",
+        "owner": "rpg",
+        "subItems": [
+          "Market Sentiment Analysis",
+          "Competitive Content Analysis"
+        ]
+      },
+      {
+        "id": "p2-6",
+        "label": "SEO & GEO Analysis",
+        "status": "pending",
+        "owner": "rpg"
+      },
+      {
+        "id": "p2-7",
+        "label": "Content Strategy",
+        "status": "pending",
+        "owner": "rpg"
+      },
+      {
+        "id": "p2-8",
+        "label": "Backpack Sign-Off",
+        "status": "pending",
+        "owner": "client"
+      }
+    ],
+    "outcomes": [
+      {
+        "label": "90-Day Business Plan",
+        "description": "Strategic roadmap for your first 90 days"
+      },
+      {
+        "label": "Content Execution Plan (Rolling 60 Days)",
+        "description": "Ready-to-execute content calendar"
+      }
+    ]
+  },
+  "phase3": {
+    "title": "Phase 3 · Website",
+    "description": "Locked until Phase 2 is signed off.",
+    "status": "locked",
+    "type": "new_build",
+    "items": []
+  },
+  "phase4": {
+    "title": "Phase 4 · Content Launch & Ongoing",
+    "description": "Locked until Phase 3 is complete.",
+    "status": "locked",
+    "items": [
+      { "label": "2 Blog Posts / Month", "status": "pending" },
+      { "label": "Social Media Captions", "status": "pending" },
+      { "label": "Monthly Performance Report", "status": "pending" },
+      { "label": "Quarterly Strategy Review", "status": "pending" }
+    ]
+  },
+  "brandProfile": {
+    "colors": [],
+    "fonts": [""],
+    "mission": ""
+  },
+  "icp": [],
+  "goals": [],
+  "communications": {
+    "tickets": [],
+    "uploads": []
+  }
+}

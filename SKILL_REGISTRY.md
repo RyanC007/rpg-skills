@@ -1,6 +1,6 @@
 # RPG Skill Registry
 
-This registry contains all 72 unique skills across the Ready, Plan, Grow! ecosystem, consolidated into a single canonical source.
+This registry contains all 76 unique skills across the Ready, Plan, Grow! ecosystem, consolidated into a single canonical source.
 
 ## Complete Skill Catalog
 
@@ -10,6 +10,8 @@ This registry contains all 72 unique skills across the Ready, Plan, Grow! ecosys
 | `ai-site-reporter` | Perform deep technical analysis of any website URL to identify its AI builder or CMS, determine site age, extract the full tech stack, and examine code patterns. Delivers a structured Markdown report. Use when asked to analyze, audit, or investigate any website, or when asked "what was this built with", "how old is this site", or "what tech stack does this use". |
 | `edg-data-storage` | Mandatory data storage rules for Elite Design Group (EDG) tasks. Use whenever performing ANY file creation, output delivery, or data storage action for EDG. The EDG Shared Google Drive is the single source of truth. All EDG data, reports, and content must be stored there. The RPG Shared Drive is Scarlett's own brain — EDG data must NOT be stored there. GitHub (RyanC007/ai-manager-stack) is for code and versioned config only. |
 | `edg-social-media-gen` | Generates standardized 4:5 (1080x1350) social media posts for Elite Design Group (EDG) house plans. Use when creating IG content from elitedesigngroup.com plan links. |
+| `bgm-prompter` | MUST read this skill BEFORE entering generate mode for music tasks. Covers prompt crafting framework, structure syntax, and multi-clip strategy for AI music generation. |
+| `canva-mcp` | Guide for using the Canva MCP server integration. Use when creating, importing, exporting, or managing designs in the user's Canva account via MCP. Covers recommended workflows, import limits, template constraints, available tools, and critical pitfalls to avoid. |
 | `excel-generator` | Professional Excel spreadsheet creation with a focus on aesthetics and data analysis. Use when creating spreadsheets for organizing, analyzing, and presenting structured data in a clear and professional format. |
 | `geo-audit` | Full website GEO+SEO audit with parallel subagent delegation. Orchestrates a comprehensive Generative Engine Optimization audit across AI citability, platform analysis, technical infrastructure, content quality, and schema markup. Produces a composite GEO Score (0-100) with prioritized action plan. |
 | `geo-brand-mentions` | Brand mention and authority scanner for AI visibility. Analyzes brand presence across platforms that AI models rely on for entity recognition and citation decisions. Produces a Brand Authority Score (0-100) with platform-specific recommendations. |
@@ -49,6 +51,8 @@ This registry contains all 72 unique skills across the Ready, Plan, Grow! ecosys
 | `rpg-llms-txt` | Generates a spec-compliant llms.txt file and supporting Markdown files for any website to improve AI crawler accessibility. Use when a user asks to create an llms.txt file, optimize a site for AI crawlers, or make a site readable by LLMs. |
 | `rpg-local-seo-agent` | RPG Local SEO Agent — a master-level Local SEO strategist persona. Transforms any local business scenario into a precise, actionable SEO game plan using the 5-R Framework (Research, Rebuild, Reputation, Reach, Results). Use when a client needs local search rankings, Google Business Profile (GBP) strategy, citation building, review engine setup, or a 90-day local SEO roadmap. Covers GBP suspension reinstatement, on-page SEO, city landing pages, NAP consistency, and backlink outreach for service-area businesses. |
 | `rpg-marcela-brief` |   Runs the daily Scarlett morning brief for Marcela Shine (Mon-Fri). |
+| `marketing-ops-audit` | Conducts a 20-question marketing operations ownership audit. Use when a user requests a marketing ownership risk assessment, an ops audit, or needs to check who controls their marketing systems. This is strictly an operations assessment, not a strategy audit. |
+| `rpg-client-onboarding` | Full RPG client onboarding workflow — creates the Client Mission Control Portal, Master Client Profile (MCP), and Agent Briefing for a new client. Use when Marcela says 'onboard [client name]' or 'set up the portal for [client]'. Requires client name, website URL, and their RPG Shared Drive folder link. Outputs a live password-protected portal on Manus, MCP in Drive, and Agent Briefing ready for the Client AI project instructions. |
 | `rpg-market-research-framework` | A repeatable framework for identifying and validating product or service opportunities for Ready, Plan, Grow! by analyzing market language, pain points, and competitive gaps. Use when you need to find a new market opportunity, validate a product idea, or sharpen the positioning of an existing offer. |
 | `rpg-mit-competitive-intelligence` | This skill provides tools and workflows for gathering and analyzing competitive intelligence, specifically tailored for the RPG (Role-Playing Game) market, leveraging MIT-style analytical frameworks. |
 | `rpg-mit-icp-reverse-engineer` | Reverse-engineers the Ideal Customer Profile from real customer data — reviews, social comments, CRM records, and interviews. |
@@ -81,3 +85,8 @@ This registry contains all 72 unique skills across the Ready, Plan, Grow! ecosys
 
 ## Centralization Notes
 This repository is the single source of truth for all RPG skills. Skills previously scattered across `rpg-skills`, `ai-manager-stack`, and `geo-seo-manus` have been consolidated here.
+
+## Changelog
+| Date | Change |
+| :--- | :--- |
+| 2026-04-15 | Added 4 skills from Scarlett local sandbox: `bgm-prompter`, `canva-mcp`, `marketing-ops-audit`, `rpg-client-onboarding`. Count updated to 76. |

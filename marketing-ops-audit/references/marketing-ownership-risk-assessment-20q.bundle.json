@@ -1,0 +1,681 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://readyplangrow.com/schemas/marketing-ownership-risk-assessment-20q.bundle.json",
+  "bundle_version": "2.0.0",
+  "schema": {
+    "type": "object",
+    "title": "Marketing Ownership Risk Assessment Response",
+    "required": [
+      "business",
+      "responses"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "business": {
+        "type": "object",
+        "required": [
+          "name",
+          "size",
+          "industry"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "size": {
+            "type": "string",
+            "enum": [
+              "solo",
+              "2-5",
+              "6-20",
+              "21-50",
+              "51-100",
+              "101+"
+            ]
+          },
+          "industry": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "responses": {
+        "type": "array",
+        "minItems": 20,
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "required": [
+            "question_id",
+            "score"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "question_id": {
+              "type": "string",
+              "pattern": "^Q(0[1-9]|1[0-9]|20)$"
+            },
+            "score": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "notes": {
+              "type": "string",
+              "maxLength": 2000
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "assessment": {
+    "meta": {
+      "id": "marketing-ownership-risk-assessment-20q",
+      "version": "2.0.0",
+      "title": "Marketing Ownership Risk Assessment",
+      "scope_statement": "This is an operations assessment, not a marketing strategy audit. It measures ownership, admin access, documentation, continuity, and governance.",
+      "description": "20 operational questions to measure whether a small business actually owns and controls the systems its marketing runs on.",
+      "score_scale": {
+        "min": 0,
+        "max": 60,
+        "per_question_min": 0,
+        "per_question_max": 3
+      },
+      "risk_bands": [
+        {
+          "id": "severe",
+          "label": "Severe ownership risk",
+          "range": {
+            "min": 0,
+            "max": 20
+          }
+        },
+        {
+          "id": "high",
+          "label": "High ownership risk",
+          "range": {
+            "min": 21,
+            "max": 35
+          }
+        },
+        {
+          "id": "moderate",
+          "label": "Moderate ownership risk",
+          "range": {
+            "min": 36,
+            "max": 48
+          }
+        },
+        {
+          "id": "controlled",
+          "label": "Mostly controlled, some gaps",
+          "range": {
+            "min": 49,
+            "max": 60
+          }
+        }
+      ]
+    },
+    "categories": [
+      {
+        "id": "account_ownership",
+        "label": "Account Ownership",
+        "description": "Who actually owns the core marketing platforms.",
+        "question_ids": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q04",
+          "Q05"
+        ]
+      },
+      {
+        "id": "admin_access",
+        "label": "Admin Access",
+        "description": "Whether the business has direct administrative control of core systems.",
+        "question_ids": [
+          "Q06",
+          "Q07",
+          "Q08",
+          "Q09",
+          "Q10"
+        ]
+      },
+      {
+        "id": "documentation_continuity",
+        "label": "Documentation & Continuity",
+        "description": "Whether the business can understand and continue operations without vendor dependence.",
+        "question_ids": [
+          "Q11",
+          "Q12",
+          "Q13",
+          "Q14",
+          "Q15"
+        ]
+      },
+      {
+        "id": "permissions_governance",
+        "label": "Permissions & Governance",
+        "description": "How access is assigned, reviewed, removed, and backed up.",
+        "question_ids": [
+          "Q16",
+          "Q17",
+          "Q18",
+          "Q19",
+          "Q20"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "id": "Q01",
+        "category_id": "account_ownership",
+        "slug": "domain-registrar-owner",
+        "prompt": "Is your domain registrar account owned by the business, not a freelancer, agency, or former employee?",
+        "help_text": "Examples: GoDaddy, Namecheap, Cloudflare Registrar.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No or not sure",
+            "1": "Kind of, but unclear",
+            "2": "No, someone outside the business owns it",
+            "3": "Yes, the business owns it"
+          }
+        }
+      },
+      {
+        "id": "Q02",
+        "category_id": "account_ownership",
+        "slug": "website-hosting-owner",
+        "prompt": "Is the main website hosting account owned by the business?",
+        "help_text": "Examples: WP Engine, SiteGround, Bluehost, Squarespace, Shopify, Webflow hosting.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No or not sure",
+            "1": "Kind of, but unclear",
+            "2": "No, someone outside the business owns it",
+            "3": "Yes, the business owns it"
+          }
+        }
+      },
+      {
+        "id": "Q03",
+        "category_id": "account_ownership",
+        "slug": "primary-google-owner",
+        "prompt": "Does the business own the main Google account tied to your marketing tools?",
+        "help_text": "This may control GA4, Search Console, Business Profile, Tag Manager, or Ads.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No or not sure",
+            "1": "Kind of, but unclear",
+            "2": "No, someone outside the business owns it",
+            "3": "Yes, the business owns it"
+          }
+        }
+      },
+      {
+        "id": "Q04",
+        "category_id": "account_ownership",
+        "slug": "crm-owner",
+        "prompt": "Is your CRM or contact database account owned by the business?",
+        "help_text": "Examples: HubSpot, Salesforce, Pipedrive, Keap, Zoho CRM.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No or not sure",
+            "1": "Kind of, but unclear",
+            "2": "No, someone outside the business owns it",
+            "3": "Yes, the business owns it"
+          }
+        }
+      },
+      {
+        "id": "Q05",
+        "category_id": "account_ownership",
+        "slug": "email-platform-owner",
+        "prompt": "Is your email marketing platform owned by the business?",
+        "help_text": "Examples: Mailchimp, Klaviyo, MailerLite, ConvertKit, Constant Contact.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No or not sure",
+            "1": "Kind of, but unclear",
+            "2": "No, someone outside the business owns it",
+            "3": "Yes, the business owns it"
+          }
+        }
+      },
+      {
+        "id": "Q06",
+        "category_id": "admin_access",
+        "slug": "domain-admin-access",
+        "prompt": "Does someone inside the business have full admin access to the domain registrar?",
+        "help_text": "This means they can change DNS, renew, transfer, and manage users.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Some access, but not full",
+            "2": "Only a vendor or outside person has full access",
+            "3": "Yes, someone inside the business has full access"
+          }
+        }
+      },
+      {
+        "id": "Q07",
+        "category_id": "admin_access",
+        "slug": "cms-admin-access",
+        "prompt": "Does the business have full admin access to the website CMS or builder?",
+        "help_text": "Examples: WordPress, Shopify, Squarespace, Webflow.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Some access, but not full",
+            "2": "Only a vendor or outside person has full access",
+            "3": "Yes, someone inside the business has full access"
+          }
+        }
+      },
+      {
+        "id": "Q08",
+        "category_id": "admin_access",
+        "slug": "ga4-admin-access",
+        "prompt": "Does the business have GA4 admin access, including the ability to add or remove users?",
+        "help_text": "Viewer access does not count as admin access.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Can look, but cannot manage it",
+            "2": "Only a vendor or outside person has admin access",
+            "3": "Yes, someone inside the business has admin access"
+          }
+        }
+      },
+      {
+        "id": "Q09",
+        "category_id": "admin_access",
+        "slug": "search-console-owner-access",
+        "prompt": "Does the business have verified owner or full-user access in Google Search Console?",
+        "help_text": "This checks if the business truly controls the property.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Some access, but not clear control",
+            "2": "Only a vendor or outside person controls it",
+            "3": "Yes, the business controls it"
+          }
+        }
+      },
+      {
+        "id": "Q10",
+        "category_id": "admin_access",
+        "slug": "google-business-profile-access",
+        "prompt": "Does the business have admin access to Google Business Profile?",
+        "help_text": "This is the listing shown in Google Maps and local search.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Some access, but not clear control",
+            "2": "Only a vendor or outside person controls it",
+            "3": "Yes, the business controls it"
+          }
+        }
+      },
+      {
+        "id": "Q11",
+        "category_id": "documentation_continuity",
+        "slug": "tool-inventory-documentation",
+        "prompt": "Is there a current list of your marketing tools, owners, admins, and login recovery methods?",
+        "help_text": "A spreadsheet is fine if it is current and controlled by the business.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "There is a partial or old list",
+            "2": "Only a vendor has the full list",
+            "3": "Yes, the business has a current list"
+          }
+        }
+      },
+      {
+        "id": "Q12",
+        "category_id": "documentation_continuity",
+        "slug": "integration-documentation",
+        "prompt": "Are your main integrations documented so the business can see how leads and data move between systems?",
+        "help_text": "Examples: forms to CRM, CRM to email platform, booking tool to calendar.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "A few notes exist",
+            "2": "Only a vendor has the details",
+            "3": "Yes, the business has clear notes"
+          }
+        }
+      },
+      {
+        "id": "Q13",
+        "category_id": "documentation_continuity",
+        "slug": "asset-library-access",
+        "prompt": "Can the business quickly find brand assets, key logins, and operating documents without asking a vendor?",
+        "help_text": "Think logos, templates, SOPs, and recovery details.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Sometimes",
+            "2": "Usually only through a vendor",
+            "3": "Yes, they are stored in a business-controlled place"
+          }
+        }
+      },
+      {
+        "id": "Q14",
+        "category_id": "documentation_continuity",
+        "slug": "data-exportability",
+        "prompt": "Can the business export customer, lead, and email data from core platforms without a vendor?",
+        "help_text": "This checks whether the business can take its data with it.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No or not sure",
+            "1": "Maybe, but not tested",
+            "2": "Only a vendor can do it",
+            "3": "Yes, someone inside the business can do it"
+          }
+        }
+      },
+      {
+        "id": "Q15",
+        "category_id": "documentation_continuity",
+        "slug": "30-day-operating-continuity",
+        "prompt": "Could the business keep core marketing operations running for 30 days if the current marketing vendor disappeared tomorrow?",
+        "help_text": "Think website updates, email sends, lead handling, local visibility, and reporting.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Maybe, but it would be very rough",
+            "2": "Mostly, but with important gaps",
+            "3": "Yes"
+          }
+        }
+      },
+      {
+        "id": "Q16",
+        "category_id": "permissions_governance",
+        "slug": "business-email-standard",
+        "prompt": "Are key platforms set up under business-owned email addresses instead of personal or contractor emails?",
+        "help_text": "Best practice is using company-controlled email addresses.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Some are, some are not",
+            "2": "We are in the middle of changing this",
+            "3": "Yes"
+          }
+        }
+      },
+      {
+        "id": "Q17",
+        "category_id": "permissions_governance",
+        "slug": "two-internal-admins",
+        "prompt": "Do at least two trusted people inside the business have admin access to the most important platforms?",
+        "help_text": "Think domain, hosting, website, Google account, CRM, and email platform.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Only in a few tools",
+            "2": "Vendors still cover most of this",
+            "3": "Yes"
+          }
+        }
+      },
+      {
+        "id": "Q18",
+        "category_id": "permissions_governance",
+        "slug": "offboarding-process",
+        "prompt": "Is there a written process to remove former employees, contractors, or vendors from systems they no longer need?",
+        "help_text": "This includes taking away access and updating records.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Kind of, but not consistent",
+            "2": "Vendors manage their own access",
+            "3": "Yes"
+          }
+        }
+      },
+      {
+        "id": "Q19",
+        "category_id": "permissions_governance",
+        "slug": "access-review-routine",
+        "prompt": "Does the business review platform ownership, admins, and permissions on a regular schedule?",
+        "help_text": "Quarterly or twice a year is usually enough for a small business.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "Rarely",
+            "2": "Sometimes, usually after a problem",
+            "3": "Yes"
+          }
+        }
+      },
+      {
+        "id": "Q20",
+        "category_id": "permissions_governance",
+        "slug": "vendor-dependency-awareness",
+        "prompt": "Does the business clearly know which systems would break first if a key vendor or freelancer vanished?",
+        "help_text": "This is about knowing the risk before a problem happens.",
+        "scale": {
+          "type": "ordinal_0_3",
+          "labels": {
+            "0": "No",
+            "1": "A little",
+            "2": "Some of it is known, but not written down",
+            "3": "Yes, the business knows and has it documented"
+          }
+        }
+      }
+    ],
+    "scoring_model": {
+      "question_weighting": {
+        "default_weight": 1,
+        "overrides": {
+          "Q01": 1.5,
+          "Q03": 1.4,
+          "Q04": 1.3,
+          "Q05": 1.3,
+          "Q06": 1.5,
+          "Q08": 1.4,
+          "Q11": 1.2,
+          "Q15": 2.0,
+          "Q16": 1.2,
+          "Q17": 1.4,
+          "Q19": 1.2,
+          "Q20": 1.2
+        }
+      },
+      "category_weights": {
+        "account_ownership": 1.2,
+        "admin_access": 1.2,
+        "documentation_continuity": 1.1,
+        "permissions_governance": 1.2
+      },
+      "critical_conditions": [
+        {
+          "id": "domain_not_owned",
+          "label": "Domain ownership is unclear or outside the business",
+          "question_id": "Q01",
+          "trigger_scores_at_or_below": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "google_anchor_not_owned",
+          "label": "Main Google ownership is unclear or outside the business",
+          "question_id": "Q03",
+          "trigger_scores_at_or_below": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "crm_not_owned",
+          "label": "CRM ownership is unclear or outside the business",
+          "question_id": "Q04",
+          "trigger_scores_at_or_below": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "email_platform_not_owned",
+          "label": "Email platform ownership is unclear or outside the business",
+          "question_id": "Q05",
+          "trigger_scores_at_or_below": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "no_internal_domain_admin",
+          "label": "The business lacks internal domain admin access",
+          "question_id": "Q06",
+          "trigger_scores_at_or_below": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "no_internal_ga4_admin",
+          "label": "The business lacks internal GA4 admin access",
+          "question_id": "Q08",
+          "trigger_scores_at_or_below": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "no_tool_inventory",
+          "label": "There is no current tool inventory",
+          "question_id": "Q11",
+          "trigger_scores_at_or_below": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "vendor_failure_exposure",
+          "label": "The business would struggle if the current vendor disappeared",
+          "question_id": "Q15",
+          "trigger_scores_at_or_below": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "single_point_of_admin_failure",
+          "label": "Critical tools do not have at least two internal admins",
+          "question_id": "Q17",
+          "trigger_scores_at_or_below": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "no_access_review_routine",
+          "label": "Ownership and permissions are not reviewed regularly",
+          "question_id": "Q19",
+          "trigger_scores_at_or_below": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "output_model": {
+      "overall": {
+        "fields": [
+          "total_raw_score",
+          "normalized_score_0_100",
+          "risk_band_id",
+          "risk_band_label"
+        ]
+      },
+      "by_category": {
+        "fields": [
+          "category_id",
+          "category_label",
+          "raw_score",
+          "max_score",
+          "normalized_score_0_100",
+          "risk_summary"
+        ]
+      },
+      "flags": {
+        "fields": [
+          "critical_condition_id",
+          "label",
+          "triggered"
+        ]
+      },
+      "recommendation_sets": {
+        "overall_actions": [
+          {
+            "id": "start_here",
+            "label": "Start here",
+            "description": "Top 3-5 actions that reduce operational dependency and ownership risk first.",
+            "based_on": [
+              "critical_conditions",
+              "lowest_scoring_categories"
+            ]
+          },
+          {
+            "id": "quick_wins",
+            "label": "Quick wins",
+            "description": "Fast actions that improve ownership clarity, access, and documentation.",
+            "based_on": [
+              "questions_with_score_1_or_2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "ui": {
+    "intro_title": "Marketing Ownership Risk Assessment",
+    "intro_subtitle": "This is an operations audit, not a strategy audit. It checks whether your business owns and controls the systems your marketing depends on.",
+    "completion_copy": {
+      "severe": "You are at severe ownership risk. Critical marketing systems may be controlled by someone outside the business.",
+      "high": "You are at high ownership risk. Important systems exist, but control is still weak or unclear.",
+      "moderate": "You are at moderate ownership risk. The basics are in place, but there are still important gaps.",
+      "controlled": "You mostly control your core marketing operations. The next step is tightening documentation, backup access, and governance."
+    }
+  }
+}
