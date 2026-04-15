@@ -14,6 +14,7 @@ All file operations MUST be performed on the designated RPG Shared Drive. This d
 -   **NEVER** use the personal Google Drive root (`manus_google_drive:`).
 -   **ALWAYS** target the `0AK8dAs_XgfnNUk9PVA` Shared Drive.
 -   **NEVER** permanently delete any file. Always move files to the trash.
+-   **NEVER** use the browser to open Google Drive, Docs, Sheets, or Slides links. ALWAYS use `gws` or `rclone` to interact with these resources directly.
 
 ## `rclone` Command Guardrail
 
@@ -70,3 +71,4 @@ cat /home/ubuntu/skills/scarlett-drive-guardrail/references/drive_config.json
 | **`gws` Params** | Every `gws` command MUST use `"driveId": "0AK8dAs_XgfnNUk9PVA"` and `"supportsAllDrives": true`. |
 | **No Personal Drive** | NEVER write to the personal Google Drive root. |
 | **No Deletion** | NEVER permanently delete files. |
+| **No Browser** | NEVER use the browser to access Google Drive links. ALWAYS use `gws` or `rclone`. |
