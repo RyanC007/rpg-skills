@@ -23,6 +23,7 @@ VALID_CATEGORIES = [
 def main():
     parser = argparse.ArgumentParser(description="Add or update knowledge in Ryan's Portable Brain")
     parser.add_argument("--category", required=True, help=f"Must be one of: {', '.join(VALID_CATEGORIES)}")
+    parser.add_argument("--context", required=True, choices=["personal", "business"], help="personal or business — REQUIRED. Never mix both in one chunk.")
     parser.add_argument("--title", required=True, help="Concise title for the knowledge chunk")
     parser.add_argument("--content", required=True, help="The actual knowledge content")
     parser.add_argument("--source", required=True, help="Where this knowledge came from")
@@ -66,6 +67,7 @@ def main():
             "id": chunk_id,
             "category": args.category,
             "subcategory": args.subcategory,
+            "context": args.context,
             "title": args.title[:500],
             "content": args.content[:10000],
             "embedding": emb,
