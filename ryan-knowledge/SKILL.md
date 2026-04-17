@@ -13,11 +13,25 @@ This skill provides the interface to Ryan's Portable Brain — a Supabase vector
 - **Storage**: When Ryan explicitly tells you to "save this to my brain", "remember this", or when you extract a new framework/opinion from a conversation.
 - **Updating**: When Ryan corrects a previous assumption or updates his stance on a topic.
 
+## Authorized Agents
+
+The following agents have full read and write access to the Portable Brain:
+
+| Agent | Location | Access |
+| :--- | :--- | :--- |
+| **Ryan's AI** | Manus Project `RErVF6WuENnabtqdL4mGvK` | Full read + write |
+| **Trinity** | Manus Project (Chief of Staff) | Full read + write |
+| **Seven** | Manus stack | Full read + write |
+| **Morpheus** | Manus stack | Read + write only when Ryan explicitly authorizes per task |
+
+**All other agents**: Read-only unless Ryan grants explicit write permission.
+
 ## Boundary Rules (CRITICAL)
 
 1. **Ryan's IP Only**: This database is strictly for Ryan's personal knowledge, frameworks, and voice. Do NOT store client data, general RPG operations, or Marcela's knowledge here.
 2. **High Confidence Only**: Only store information you are highly confident is accurate and represents Ryan's actual stance.
 3. **No Duplication**: Before adding new knowledge, always search first to see if it already exists. If it does, update the existing chunk rather than creating a duplicate.
+4. **Ryan-Triggered Writes Only**: Any agent may search the brain freely. However, new knowledge may only be written when Ryan explicitly requests it — either by direct instruction ("save this", "remember this") or as part of a structured extraction session.
 
 ## How to Use the Brain
 
