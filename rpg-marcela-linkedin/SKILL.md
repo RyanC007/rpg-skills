@@ -139,7 +139,7 @@ Each post entry in the Doc includes:
 1. Day and date
 2. Pillar and theme
 3. Full post text (ready to copy-paste)
-4. Image (embedded or linked)
+4. Image (embedded or linked, with alt text)
 5. Virality note (one sentence on why this post has engagement potential)
 6. Hashtags
 
@@ -160,6 +160,7 @@ Before delivering the Google Doc, confirm every item:
 - Every post ends with a question
 - Every post has 3-5 hashtags
 - Every image is 16:9 landscape
+- Every image has descriptive alt text
 - Google Doc saved to the correct Drive folder
 - Google Doc link delivered to Ryan
 
@@ -167,10 +168,10 @@ Before delivering the Google Doc, confirm every item:
 
 ## Context to Load at Start of Every Run
 
-Run the daily context pull first:
+Run the startup check first:
 
 ```bash
-bash /home/ubuntu/skills/scarlett-context-pull/scripts/scarlett_context_pull.sh
+bash /home/ubuntu/skills/scarlett-context-pull/scripts/scarlett_startup_check.sh
 ```
 
 Also read before generating if not already in context:
