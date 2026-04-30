@@ -9,7 +9,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/usr/bin/python3</string>
-        <string>/Volumes/8TB-Backup/Ryan_Portable_Brain/scripts/vault_watcher.py</string>
+        <string>/Users/ryancunnningham/Ryan_Portable_Brain/scripts/vault_watcher.py</string>
     </array>
 
     <key>EnvironmentVariables</key>

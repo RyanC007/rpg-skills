@@ -2,7 +2,7 @@
 """
 Ryan's Portable Brain — Obsidian Vault Watcher
 ===============================================
-Watches /Volumes/8TB-Backup/Ryan_Portable_Brain/Obsidian_Vault/
+Watches /Users/ryancunnningham/Ryan_Portable_Brain/Obsidian_Vault/
 for new or modified .md files and automatically embeds + upserts
 them into the ryan_knowledge_base Supabase table.
 
@@ -30,7 +30,7 @@ from openai import OpenAI
 from supabase import create_client
 
 # ─── CONFIG ────────────────────────────────────────────────────────────────────
-VAULT_PATH = "/Volumes/8TB-Backup/Ryan_Portable_Brain/Obsidian_Vault"
+VAULT_PATH = "/Users/ryancunnningham/Ryan_Portable_Brain/Obsidian_Vault"
 SUPABASE_URL = "https://ugcqrptwxkwqlnzgjqir.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVnY3FycHR3eGt3cWxuemdqcWlyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjQ4MzQ3NywiZXhwIjoyMDg4MDU5NDc3fQ.SfkcBZs02KPqBaYMil3jrR0hKB-QSlm9sIGH66UA1fU"
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
@@ -233,7 +233,7 @@ if __name__ == "__main__":
     vault = Path(VAULT_PATH)
     if not vault.exists():
         print(f"ERROR: Vault path not found: {VAULT_PATH}")
-        print("Make sure your 8TB-Backup drive is connected and the vault folder exists.")
+        print("Make sure the vault folder exists at: " + VAULT_PATH)
         exit(1)
 
     log.info(f"Ryan's Portable Brain — Vault Watcher STARTED")
